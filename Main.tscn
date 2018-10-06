@@ -1,17 +1,22 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://DDC_Files/MainTile.tmx" type="PackedScene" id=1]
 [ext_resource path="res://Character.tscn" type="PackedScene" id=2]
+[ext_resource path="res://People.tscn" type="PackedScene" id=3]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="MainTile" parent="." instance=ExtResource( 1 )]
 position = Vector2( 0.536423, -0.492874 )
 
-[node name="Character" parent="." instance=ExtResource( 2 )]
+[node name="Humans" type="YSort" parent="."]
+sort_enabled = true
+
+[node name="Character" parent="Humans" instance=ExtResource( 2 )]
+editor/display_folded = true
 position = Vector2( 755.257, 382.388 )
 
-[node name="Camera2D" type="Camera2D" parent="Character"]
+[node name="Camera2D" type="Camera2D" parent="Humans/Character"]
 anchor_mode = 1
 rotating = false
 current = true
@@ -34,6 +39,18 @@ drag_margin_bottom = 0.2
 editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
+
+[node name="People" parent="Humans" instance=ExtResource( 3 )]
+position = Vector2( 962.487, 392.501 )
+
+[node name="People2" parent="Humans" instance=ExtResource( 3 )]
+position = Vector2( 522.957, 425.65 )
+
+[node name="People3" parent="Humans" instance=ExtResource( 3 )]
+position = Vector2( 454.203, 597.534 )
+
+[node name="People4" parent="Humans" instance=ExtResource( 3 )]
+position = Vector2( 181.645, 160.459 )
 
 
 [editable path="MainTile"]
