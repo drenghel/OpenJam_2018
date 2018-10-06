@@ -10,16 +10,11 @@
 position = Vector2( 0.536423, -0.492874 )
 
 [node name="HumansSorting" type="YSort" parent="."]
-editor/display_folded = true
 sort_enabled = true
 _sections_unfolded = [ "Sort" ]
 
 [node name="Character" parent="HumansSorting" instance=ExtResource( 2 )]
-editor/display_folded = true
 position = Vector2( 755.257, 382.388 )
-
-[node name="giving_range" parent="HumansSorting/Character" index="1"]
-editor/display_folded = false
 
 [node name="Camera2D" type="Camera2D" parent="HumansSorting/Character"]
 anchor_mode = 1
@@ -59,5 +54,3 @@ position = Vector2( 181.645, 160.459 )
 
 
 [editable path="MainTile"]
-
-[editable path="HumansSorting/Character"]

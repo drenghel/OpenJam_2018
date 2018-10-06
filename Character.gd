@@ -10,6 +10,7 @@ func _ready():
 	giving_area = $giving_range
 	text_area = $text_area.get_shape()
 	is_physics_processing();
+	$hand_component.try_to_reload()
 
 func _process(delta):
 	handle_inputs()
