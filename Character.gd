@@ -29,7 +29,6 @@ func handle_movement():
 		direction.x -= speed
 	if Input.is_action_pressed("ui_down"):
 		direction.y += speed
-	
 	self.move_and_slide(direction.clamped(speed))
 	
 func handle_inputs():
@@ -58,5 +57,3 @@ func show_sprite_dialog_to_rand_pos(input : Sprite) -> void:
 		input.set_rotation_degrees(15)
 	input.set_z_index(10)
 	$text_area.add_child(input)
-	
-	
