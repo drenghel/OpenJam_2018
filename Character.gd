@@ -40,13 +40,25 @@ func handle_inputs():
 func try_to_give_ad():
 	print("\ttake it!")
 	var instance : Sprite = take_it_01_res.instance()
-	$text_area.add_child(instance)
-	instance.run_fade_out()
-	instance.set_position(rand_vect2_from_extent(text_area.get_extents()))
+	show_sprite_dialog_to_rand_pos(instance)
+	
+	
 	
 func rand_vect2_from_extent(input : Vector2) -> Vector2:
 	return Vector2(rand_range(-input.x,input.x),rand_range(-input.y, input.y))
 	
 	
-
+func add_sprite_to_front(input : Sprite) -> void:
+	var grand_parent : Node2D = get_node("/root").get_child(0)
+	var grand_parent_last_child  : Node2D  = grand_parent.get_child(grand_parent.get_child_count() - 1)
+	grand_parent.add_child_below_node(grand_parent_last_child, input)
 	
+func show_sprite_dialog_to_rand_pos(input : Sprite) -> void:
+	input.run_fade_out()
+	var rand_pos : Vector2 = rand_vect2_from_extent(text_area.get_extents()) 
+	input.set_position(rand_pos + $text_area.get_global_position())
+	if rand_pos.x < 0:
+		input.set_rotation_degrees(-15)
+	else:
+		input.set_rotation_degrees(15)
+	add_sprite_to_front(input)

@@ -10,9 +10,12 @@
 position = Vector2( 0.536423, -0.492874 )
 
 [node name="HumansSorting" type="YSort" parent="."]
+editor/display_folded = true
 sort_enabled = true
+_sections_unfolded = [ "Sort" ]
 
 [node name="Character" parent="HumansSorting" instance=ExtResource( 2 )]
+editor/display_folded = true
 position = Vector2( 755.257, 382.388 )
 
 [node name="giving_range" parent="HumansSorting/Character" index="1"]
