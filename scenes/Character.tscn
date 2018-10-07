@@ -60,4 +60,5 @@ disabled = true
 [node name="hand_component" type="Node2D" parent="."]
 position = Vector2( 19.412, -6.14714 )
 script = ExtResource( 3 )
+max_in_hand = 5
 
