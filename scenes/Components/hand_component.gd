@@ -1,6 +1,6 @@
 extends Node2D
 
-var add_resource : Resource = preload("res://scenes/FilthyAd.tscn")
+var add_resource : Resource = preload("res://scenes/Components/FilthyAd.tscn")
 var current_stack : Array
 export var max_in_hand : int
 onready var giving_range : Area2D = get_node("../giving_range")
