@@ -4,7 +4,7 @@
 [ext_resource path="res://assets/character.png" type="Texture" id=2]
 [ext_resource path="res://scenes/giving_range.gd" type="Script" id=3]
 [ext_resource path="res://scenes/Components/speech.gd" type="Script" id=4]
-[ext_resource path="res://scenes/Components/hand_component.gd" type="Script" id=5]
+[ext_resource path="res://scenes/Components/hand_rechargeable.gd" type="Script" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -65,5 +65,6 @@ _sections_unfolded = [ "Script" ]
 [node name="hand_component" type="Node2D" parent="."]
 position = Vector2( 19.412, -6.14714 )
 script = ExtResource( 5 )
+_sections_unfolded = [ "Script" ]
 max_in_hand = 5
 

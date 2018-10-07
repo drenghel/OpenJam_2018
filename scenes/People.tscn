@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/People.gd" type="Script" id=1]
 [ext_resource path="res://assets/people.png" type="Texture" id=2]
+[ext_resource path="res://scenes/Components/hand.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -19,6 +20,7 @@ collision/safe_margin = 0.08
 motion/sync_to_physics = false
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
+difficulty = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
@@ -28,4 +30,9 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( 17.1883, -186.616 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Offset" ]
+
+[node name="hand" type="Node2D" parent="."]
+script = ExtResource( 3 )
+_sections_unfolded = [ "Script" ]
+max_in_hand = null
 
