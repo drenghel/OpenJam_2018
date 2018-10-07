@@ -2,6 +2,7 @@ extends "res://scenes/Components/hand.gd"
 
 onready var giving_range : Area2D = get_node("../giving_range")
 
+signal is_empty_signal
 
 func try_to_reload() -> bool:
 	var first_reservoir : Node2D = giving_range.find_first_reservoir_in_list()
@@ -19,6 +20,7 @@ func try_to_give_to(receiver : KinematicBody2D):
 		if receiver.receive_ad():
 			if not remove_one_ad_from_hand():
 				print("No ad to give left !")
+				emit_signal("is_empty_signal")
 			
 
 func _process(delta):

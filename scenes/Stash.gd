@@ -3,6 +3,8 @@ extends StaticBody2D
 export var papers_count_max : int
 var papers_count : int
 
+signal is_full_signal
+
 enum state { 
 			Empty = 0,
 			TwentyFive = 25,
@@ -21,6 +23,7 @@ func _ready():
 	assert(papers_count_max != 0)
 	papers_count = papers_count_max
 	set_state(Full)
+	
 	
 func remove_paper(nb : int) -> bool:
 	if papers_count > 0:
@@ -41,6 +44,7 @@ func update_sprite():
 func set_state(percent):
 	if percent == 0:
 		$CollisionShape2D/Sprite.texture = r_empty
+		emit_signal("is_full_signal")
 	elif percent > 0 && percent <= 25 :
 		$CollisionShape2D/Sprite.texture = r_25
 	elif percent > 25 && percent <= 50 :
