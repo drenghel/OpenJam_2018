@@ -9,8 +9,6 @@ const take_it_01_res : Resource = preload("res://scenes/take_it_01.tscn")
 func _ready():
 	giving_area = $giving_range
 	text_area = $text_area.get_shape()
-	is_physics_processing();
-	$hand_component.try_to_reload()
 
 func _process(delta):
 	handle_inputs()
@@ -33,7 +31,6 @@ func handle_movement():
 	
 func handle_inputs():
 	if Input.is_action_just_pressed("game_action"):
-		print("action !")
 		try_to_give_ad()
 		
 		
