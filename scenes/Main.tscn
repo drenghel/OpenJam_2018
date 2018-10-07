@@ -11,14 +11,15 @@
 [node name="MainTile" parent="." instance=ExtResource( 1 )]
 position = Vector2( 0.536423, -0.492874 )
 
-[node name="HumansSorting" type="YSort" parent="."]
+[node name="SpritesSorting" type="YSort" parent="."]
 sort_enabled = true
 _sections_unfolded = [ "Sort" ]
 
-[node name="Character" parent="HumansSorting" instance=ExtResource( 2 )]
+[node name="Character" parent="SpritesSorting" instance=ExtResource( 2 )]
+editor/display_folded = true
 position = Vector2( 755.257, 382.388 )
 
-[node name="Camera2D" type="Camera2D" parent="HumansSorting/Character"]
+[node name="Camera2D" type="Camera2D" parent="SpritesSorting/Character"]
 anchor_mode = 1
 rotating = false
 current = true
@@ -42,16 +43,16 @@ editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
 
-[node name="People" parent="HumansSorting" instance=ExtResource( 3 )]
+[node name="People" parent="SpritesSorting" instance=ExtResource( 3 )]
 position = Vector2( 962.487, 392.501 )
 
-[node name="People2" parent="HumansSorting" instance=ExtResource( 3 )]
+[node name="People2" parent="SpritesSorting" instance=ExtResource( 3 )]
 position = Vector2( 522.957, 425.65 )
 
-[node name="People3" parent="HumansSorting" instance=ExtResource( 3 )]
+[node name="People3" parent="SpritesSorting" instance=ExtResource( 3 )]
 position = Vector2( 454.203, 597.534 )
 
-[node name="People4" parent="HumansSorting" instance=ExtResource( 3 )]
+[node name="People4" parent="SpritesSorting" instance=ExtResource( 3 )]
 position = Vector2( 181.645, 160.459 )
 
 [node name="Stash" parent="SpritesSorting" instance=ExtResource( 4 )]
