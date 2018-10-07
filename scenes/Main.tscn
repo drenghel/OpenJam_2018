@@ -5,7 +5,6 @@
 [ext_resource path="res://scenes/People.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/Stash.tscn" type="PackedScene" id=4]
 
-
 [node name="Node2D" type="Node2D"]
 
 [node name="MainTile" parent="." instance=ExtResource( 1 )]
@@ -57,4 +56,5 @@ position = Vector2( 181.645, 160.459 )
 
 [node name="Stash" parent="SpritesSorting" instance=ExtResource( 4 )]
 position = Vector2( 851.594, 307.445 )
+papers_count_max = null
 
