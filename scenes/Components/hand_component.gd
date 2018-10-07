@@ -13,7 +13,7 @@ func _process(delta):
 
 
 func try_to_reload() -> bool:
-	var first_reservoir : Node2D = find_first_reservoir_in_list(giving_range.get_overlapping_bodies())
+	var first_reservoir : Node2D = giving_range.find_first_reservoir_in_list()
 	if first_reservoir:
 #		print("reloading ", max_in_hand - current_stack.size(), " ads")
 		for x in range(current_stack.size(), max_in_hand):
@@ -23,11 +23,6 @@ func try_to_reload() -> bool:
 
 # ----------------------------------------------- Private
 
-func find_first_reservoir_in_list(input : Array) -> Node2D:
-	for aNode in input:
-		if aNode is StaticBody2D && aNode.is_in_group("Stash"):
-			return aNode
-	return null	
 	
 func get_advert_instance() -> Sprite:
 	return add_resource.instance()
