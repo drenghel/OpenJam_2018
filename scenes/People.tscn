@@ -7,12 +7,11 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 116.635, 88.3972 )
+extents = Vector2( 28.9973, 14.8623 )
 
 [node name="People" type="KinematicBody2D" groups=[
 "People",
 ]]
-scale = Vector2( 0.25, 0.25 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -23,16 +22,19 @@ _sections_unfolded = [ "Transform" ]
 difficulty = 75.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+editor/display_folded = true
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Sprite" type="Sprite" parent="CollisionShape2D"]
-position = Vector2( 17.1883, -186.616 )
+position = Vector2( 4.93, -52.69 )
+scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 2 )
-_sections_unfolded = [ "Offset" ]
+_sections_unfolded = [ "Offset", "Transform" ]
 
 [node name="hand" type="Node2D" parent="."]
+position = Vector2( 27.8635, -40.6011 )
 script = ExtResource( 3 )
-_sections_unfolded = [ "Script" ]
-max_in_hand = null
+_sections_unfolded = [ "Script", "Transform", "Z Index" ]
+max_in_hand = 1
 

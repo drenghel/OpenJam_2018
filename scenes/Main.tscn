@@ -15,6 +15,7 @@ sort_enabled = true
 _sections_unfolded = [ "Sort" ]
 
 [node name="Character" parent="SpritesSorting" instance=ExtResource( 2 )]
+editor/display_folded = true
 position = Vector2( 755.257, 382.388 )
 
 [node name="Camera2D" type="Camera2D" parent="SpritesSorting/Character"]

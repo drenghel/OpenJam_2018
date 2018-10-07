@@ -4,9 +4,13 @@ export var difficulty : float
 
 func receive_ad() -> bool:
 	var roll : int = rand_range(0, 100)
-	print("rolled : ", roll)
-	if roll > difficulty:
-		return true
+	if $hand.current_stack.empty():
+		if roll > difficulty:
+			$hand.add_one_ad_in_hand()
+			return true
+		else:
+			print("Don't want one !")
+			return false;
 	else:
-		print("lol nope")
+		print("Already got one")
 		return false	
