@@ -12,7 +12,7 @@ dest_files=[ "res://.import/MainTile.tmx-9243e614188bc6b7c91e7386c6e0b2b8.scn" ]
 [params]
 
 custom_properties=true
-tile_metadata=true
+tile_metadata=false
 uv_clip=true
 image_flags=7
 collision_layer=1
