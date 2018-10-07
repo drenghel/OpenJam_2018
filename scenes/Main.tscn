@@ -72,9 +72,6 @@ _sections_unfolded = [ "Pause", "Script" ]
 [node name="People" parent="GameManager/SpritesSorting" instance=ExtResource( 4 )]
 position = Vector2( 962.487, 392.501 )
 
-[node name="hand" parent="GameManager/SpritesSorting/People" index="1"]
-max_in_hand = 50
-
 [node name="People2" parent="GameManager/SpritesSorting" instance=ExtResource( 4 )]
 position = Vector2( 522.957, 425.65 )
 
@@ -179,5 +176,3 @@ anims/text_anim = SubResource( 1 )
 blend_times = [  ]
 _sections_unfolded = [ "Playback Options" ]
 
-
-[editable path="GameManager/SpritesSorting/People"]
