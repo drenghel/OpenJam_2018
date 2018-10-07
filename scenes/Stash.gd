@@ -22,12 +22,14 @@ func _ready():
 	papers_count = papers_count_max
 	set_state(Full)
 	
-func remove_paper(nb : int):
+func remove_paper(nb : int) -> bool:
 	if papers_count > 0:
 		papers_count -= nb
 		update_sprite()
+		return true
 	else:
 		printerr("paper_count is 0, can't remove")
+		return false
 
 
 func update_sprite():

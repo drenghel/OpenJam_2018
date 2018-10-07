@@ -7,7 +7,8 @@ func try_to_reload() -> bool:
 	var first_reservoir : Node2D = giving_range.find_first_reservoir_in_list()
 	if first_reservoir:
 		for x in range(current_stack.size(), max_in_hand):
-			add_one_ad_in_hand()
+			if first_reservoir.remove_paper(1):
+				add_one_ad_in_hand()
 		return true
 	return false
 	
