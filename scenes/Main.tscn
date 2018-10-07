@@ -6,7 +6,7 @@
 [ext_resource path="res://scenes/People.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/Stash.tscn" type="PackedScene" id=5]
 
-[node name="Node2D" type="Node2D"]
+[node name="World" type="Node2D"]
 
 [node name="GameManager" type="Node" parent="."]
 script = ExtResource( 1 )
@@ -15,6 +15,7 @@ script = ExtResource( 1 )
 position = Vector2( 0.536423, -0.492874 )
 
 [node name="SpritesSorting" type="YSort" parent="GameManager"]
+editor/display_folded = true
 sort_enabled = true
 _sections_unfolded = [ "Sort" ]
 
@@ -49,9 +50,6 @@ editor_draw_drag_margin = false
 [node name="People" parent="GameManager/SpritesSorting" instance=ExtResource( 4 )]
 position = Vector2( 962.487, 392.501 )
 
-[node name="hand" parent="GameManager/SpritesSorting/People" index="1"]
-max_in_hand = 50
-
 [node name="People2" parent="GameManager/SpritesSorting" instance=ExtResource( 4 )]
 position = Vector2( 522.957, 425.65 )
 
@@ -65,5 +63,3 @@ position = Vector2( 181.645, 160.459 )
 position = Vector2( 851.594, 307.445 )
 papers_count_max = null
 
-
-[editable path="GameManager/SpritesSorting/People"]
