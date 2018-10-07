@@ -35,13 +35,9 @@ func handle_inputs():
 		else:
 			print("Nobody in range !")
 			
-
 		
 		
 func try_to_give_ad(people : KinematicBody2D):
 	var instance : Sprite = take_it_01_res.instance()
 	$speech.show_sprite_dialog_to_rand_pos(instance)
 	$hand_component.try_to_give_to(people)
-
-
-# Private Functions	
