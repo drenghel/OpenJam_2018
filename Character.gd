@@ -29,16 +29,19 @@ func handle_movement():
 	
 func handle_inputs():
 	if Input.is_action_just_pressed("game_action"):
-		try_to_give_ad()
+		var people_in_range : KinematicBody2D = giving_area.find_first_people_in_range()
+		if people_in_range:
+			try_to_give_ad(people_in_range)
+		else:
+			print("Nobody in range !")
+			
 
 		
 		
-func try_to_give_ad():
-	if true:
-		var instance : Sprite = take_it_01_res.instance()
-		$speech.show_sprite_dialog_to_rand_pos(instance)	
-	else:
-		print("Nobody in range !")
+func try_to_give_ad(people : KinematicBody2D):
+	var instance : Sprite = take_it_01_res.instance()
+	$speech.show_sprite_dialog_to_rand_pos(instance)
+	$hand_component.try_to_give_to(people)
 
 
 # Private Functions	

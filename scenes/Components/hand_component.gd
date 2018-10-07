@@ -20,9 +20,22 @@ func try_to_reload() -> bool:
 			add_one_ad_in_hand_visually()
 		return true
 	return false
+	
+func try_to_give_to(receiver : KinematicBody2D):
+	if receiver.is_in_group("People") && receiver.has_method("receive_ad"):
+		if receiver.receive_ad():
+			if not remove_one_ad_from_hand():
+				print("No ad to give left !")
+			
 
 # ----------------------------------------------- Private
 
+func remove_one_ad_from_hand() -> bool:
+	if current_stack.size() != 0:
+		current_stack.pop_back().queue_free()
+		return true
+	else:
+		return false
 	
 func get_advert_instance() -> Sprite:
 	return add_resource.instance()

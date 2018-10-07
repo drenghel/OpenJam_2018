@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Character.gd" type="Script" id=1]
 [ext_resource path="res://assets/character.png" type="Texture" id=2]
-[ext_resource path="res://scenes/Components/speech.gd" type="Script" id=3]
-[ext_resource path="res://scenes/Components/hand_component.gd" type="Script" id=4]
+[ext_resource path="res://scenes/giving_range.gd" type="Script" id=3]
+[ext_resource path="res://scenes/Components/speech.gd" type="Script" id=4]
+[ext_resource path="res://scenes/Components/hand_component.gd" type="Script" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -49,6 +50,7 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
+script = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="giving_range"]
 shape = SubResource( 2 )
@@ -57,11 +59,11 @@ shape = SubResource( 2 )
 position = Vector2( 1.94119, -74.7363 )
 shape = SubResource( 3 )
 disabled = true
-script = ExtResource( 3 )
+script = ExtResource( 4 )
 _sections_unfolded = [ "Script" ]
 
 [node name="hand_component" type="Node2D" parent="."]
 position = Vector2( 19.412, -6.14714 )
-script = ExtResource( 4 )
+script = ExtResource( 5 )
 max_in_hand = 5
 
