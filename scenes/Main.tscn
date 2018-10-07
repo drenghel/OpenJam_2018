@@ -15,14 +15,13 @@ sort_enabled = true
 _sections_unfolded = [ "Sort" ]
 
 [node name="Character" parent="SpritesSorting" instance=ExtResource( 2 )]
-editor/display_folded = true
 position = Vector2( 755.257, 382.388 )
 
 [node name="Camera2D" type="Camera2D" parent="SpritesSorting/Character"]
 anchor_mode = 1
 rotating = false
 current = true
-zoom = Vector2( 1, 1 )
+zoom = Vector2( 0.4, 0.4 )
 limit_left = -10000000
 limit_top = -10000000
 limit_right = 10000000
