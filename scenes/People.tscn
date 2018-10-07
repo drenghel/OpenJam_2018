@@ -22,7 +22,6 @@ _sections_unfolded = [ "Transform" ]
 difficulty = 75.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-editor/display_folded = true
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 

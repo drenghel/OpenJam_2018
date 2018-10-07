@@ -20,8 +20,9 @@ func try_to_give_to(receiver : KinematicBody2D):
 		if receiver.receive_ad():
 			if not remove_one_ad_from_hand():
 				print("No ad to give left !")
+			if current_stack.empty():
 				emit_signal("is_empty_signal")
-			
+				
 
 func _process(delta):
 	if Input.is_action_just_pressed("game_reload"):
