@@ -30,7 +30,7 @@ func handle_movement():
 func handle_inputs():
 	if Input.is_action_just_pressed("game_action"):
 		var people_in_range : KinematicBody2D = giving_area.find_first_people_in_range()
-		if people_in_range:
+		if people_in_range && people_in_range.get_node("hand").current_stack.size() != 1:
 			try_to_give_ad(people_in_range)
 		else:
 			print("Nobody in range !")
