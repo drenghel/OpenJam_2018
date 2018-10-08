@@ -38,22 +38,10 @@
   <object id="26" name="exit_7" x="313.33" y="30.667">
    <point/>
   </object>
-  <object id="27" name="exit_6" x="235.996" y="957.334">
-   <point/>
-  </object>
-  <object id="28" name="exit_5" x="910.663" y="938.667">
-   <point/>
-  </object>
-  <object id="29" name="exit_4" x="43.9966" y="464">
+  <object id="29" name="exit_4" x="617.33" y="56">
    <point/>
   </object>
   <object id="30" name="exit_3" x="1433.33" y="26.667">
-   <point/>
-  </object>
-  <object id="31" name="exit_2" x="1891.99" y="493.334">
-   <point/>
-  </object>
-  <object id="32" name="exit_1" x="1713.33" y="940">
    <point/>
   </object>
  </objectgroup>
