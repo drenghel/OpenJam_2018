@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/People.gd" type="Script" id=1]
 [ext_resource path="res://assets/people.png" type="Texture" id=2]
 [ext_resource path="res://scenes/Components/hand.gd" type="Script" id=3]
+[ext_resource path="res://scenes/speech.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -36,4 +37,7 @@ position = Vector2( 27.8635, -40.6011 )
 script = ExtResource( 3 )
 _sections_unfolded = [ "Script", "Transform", "Z Index" ]
 max_in_hand = 1
+
+[node name="speech" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1.27777, -137.097 )
 

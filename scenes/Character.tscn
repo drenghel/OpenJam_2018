@@ -1,9 +1,9 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Character.gd" type="Script" id=1]
 [ext_resource path="res://assets/character.png" type="Texture" id=2]
 [ext_resource path="res://scenes/giving_range.gd" type="Script" id=3]
-[ext_resource path="res://scenes/Components/speech.gd" type="Script" id=4]
+[ext_resource path="res://scenes/speech.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/Components/hand_rechargeable.gd" type="Script" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -15,11 +15,6 @@ extents = Vector2( 94.774, 70.1932 )
 
 custom_solver_bias = 0.0
 radius = 64.3931
-
-[sub_resource type="RectangleShape2D" id=3]
-
-custom_solver_bias = 0.0
-extents = Vector2( 49.8277, 18.057 )
 
 [node name="Character" type="KinematicBody2D"]
 input_pickable = false
@@ -42,7 +37,6 @@ texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="giving_range" type="Area2D" parent="."]
-editor/display_folded = true
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -55,12 +49,7 @@ script = ExtResource( 3 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="giving_range"]
 shape = SubResource( 2 )
 
-[node name="speech" type="CollisionShape2D" parent="."]
-position = Vector2( 1.94119, -74.7363 )
-shape = SubResource( 3 )
-disabled = true
-script = ExtResource( 4 )
-_sections_unfolded = [ "Script" ]
+[node name="speech" parent="." instance=ExtResource( 4 )]
 
 [node name="hand_component" type="Node2D" parent="."]
 position = Vector2( 19.412, -6.14714 )

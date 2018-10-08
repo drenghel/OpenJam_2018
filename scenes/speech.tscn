@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/Components/speech.gd" type="Script" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 49.8277, 18.057 )
+
+[node name="speech" type="CollisionShape2D"]
+position = Vector2( 1.94119, -74.7363 )
+shape = SubResource( 1 )
+disabled = true
+script = ExtResource( 1 )
+_sections_unfolded = [ "Script" ]
+
