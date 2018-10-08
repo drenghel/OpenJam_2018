@@ -21,4 +21,8 @@ func receive_ad() -> bool:
 			return false;
 	else:
 		print("Already got one")
-		return false	
+		return false
+		
+func _process(delta):
+	if position.distance_to(exit.position) < 100:
+		queue_free()

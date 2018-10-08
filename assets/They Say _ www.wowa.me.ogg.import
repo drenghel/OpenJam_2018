@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/They Say _ www.wowa.me.ogg-77f5e49d967fd45261f522a82b62d58a.oggstr"
+
+[deps]
+
+source_file="res://assets/They Say _ www.wowa.me.ogg"
+dest_files=[ "res://.import/They Say _ www.wowa.me.ogg-77f5e49d967fd45261f522a82b62d58a.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

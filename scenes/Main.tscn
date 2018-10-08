@@ -1,18 +1,19 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/GameManager.gd" type="Script" id=1]
-[ext_resource path="res://scenes/Navigation2D.gd" type="Script" id=2]
-[ext_resource path="res://DDC_Files/MainTile.tmx" type="PackedScene" id=3]
-[ext_resource path="res://scenes/Character.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/Stash.tscn" type="PackedScene" id=5]
-[ext_resource path="res://assets/fonts/my_font.tres" type="DynamicFont" id=6]
+[ext_resource path="res://assets/They Say _ www.wowa.me.ogg" type="AudioStream" id=2]
+[ext_resource path="res://scenes/Navigation2D.gd" type="Script" id=3]
+[ext_resource path="res://DDC_Files/MainTile.tmx" type="PackedScene" id=4]
+[ext_resource path="res://scenes/Character.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/Stash.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/tram.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/fonts/my_font.tres" type="DynamicFont" id=8]
 
-[sub_resource type="NavigationPolygon" id=1]
+[sub_resource type="NavigationPolygon" id=3]
 
-vertices = PoolVector2Array( 1846.95, 63.1502, 1848.62, 883.21, 88.2503, 858.157, 66.5379, 507.419, 86.5801, 286.955, 84.91, 59.8099 )
-polygons = [ PoolIntArray( 0, 1, 2, 3, 4 ), PoolIntArray( 4, 5, 0 ) ]
-outlines = [ PoolVector2Array( 86.5801, 286.955, 66.5379, 507.419, 88.2503, 858.157, 1848.62, 883.21, 1846.95, 63.1502, 84.91, 59.8099 ) ]
-_sections_unfolded = [ "Resource" ]
+vertices = PoolVector2Array( 1654.66, 1502.37, 1757.3, 1975.91, 700.871, 1969.67, 1331.58, 1488.38, 694.364, 905.763, 1335.08, 1358.91, 2892.16, 830.553, 1996.4, 1354.24, 2798.85, 1987.57, 2001.06, 1490.71, 1771.29, 1973.58, 1680.32, 1505.87 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 3, 2, 4, 5 ), PoolIntArray( 5, 4, 6, 7 ), PoolIntArray( 7, 6, 8, 9 ), PoolIntArray( 9, 8, 10, 11 ) ]
+outlines = [ PoolVector2Array( 1335.08, 1358.91, 1331.58, 1488.38, 1654.66, 1502.37, 1757.3, 1975.91, 700.871, 1969.67, 694.364, 905.763, 2892.16, 830.553, 2798.85, 1987.57, 1771.29, 1973.58, 1680.32, 1505.87, 2001.06, 1490.71, 1996.4, 1354.24 ) ]
 
 [sub_resource type="Animation" id=2]
 
@@ -38,6 +39,15 @@ tracks/0/keys = {
 script = ExtResource( 1 )
 _sections_unfolded = [ "Pause" ]
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="GameManager"]
+stream = ExtResource( 2 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = true
+stream_paused = false
+mix_target = 0
+bus = "Master"
+
 [node name="SpawnTimer" type="Timer" parent="GameManager"]
 process_mode = 1
 wait_time = 3.24
@@ -45,16 +55,10 @@ one_shot = false
 autostart = true
 
 [node name="Navigation2D" type="Navigation2D" parent="GameManager"]
-script = ExtResource( 2 )
-_sections_unfolded = [ "Transform" ]
+script = ExtResource( 3 )
 CHARACTER_SPEED = 50.0
 
-[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="GameManager/Navigation2D"]
-navpoly = SubResource( 1 )
-enabled = true
-_sections_unfolded = [ "navpoly" ]
-
-[node name="MainTile" parent="GameManager/Navigation2D" instance=ExtResource( 3 )]
+[node name="MainTile" parent="GameManager/Navigation2D" instance=ExtResource( 4 )]
 position = Vector2( 0.536423, -0.492874 )
 _sections_unfolded = [ "Pause" ]
 
@@ -62,7 +66,7 @@ _sections_unfolded = [ "Pause" ]
 sort_enabled = true
 _sections_unfolded = [ "Sort" ]
 
-[node name="Character" parent="GameManager/Navigation2D/SpritesSorting" instance=ExtResource( 4 )]
+[node name="Character" parent="GameManager/Navigation2D/SpritesSorting" instance=ExtResource( 5 )]
 editor/display_folded = true
 position = Vector2( 559.363, 234.107 )
 _sections_unfolded = [ "Pause", "Transform" ]
@@ -92,9 +96,12 @@ editor_draw_limits = false
 editor_draw_drag_margin = false
 _sections_unfolded = [ "Pause", "Script" ]
 
-[node name="Stash" parent="GameManager/Navigation2D/SpritesSorting" instance=ExtResource( 5 )]
+[node name="Stash" parent="GameManager/Navigation2D/SpritesSorting" instance=ExtResource( 6 )]
 position = Vector2( 851.594, 307.445 )
 papers_count_max = 2
+
+[node name="tram" parent="GameManager/Navigation2D/SpritesSorting" instance=ExtResource( 7 )]
+position = Vector2( 927.452, 437.712 )
 
 [node name="Exits" type="Node" parent="GameManager/Navigation2D"]
 editor/display_folded = true
@@ -104,6 +111,12 @@ position = Vector2( 1142.4, 41.7546 )
 
 [node name="Node2D2" type="Node2D" parent="GameManager/Navigation2D/Exits"]
 position = Vector2( 1875.61, 283.931 )
+
+[node name="NavigationPolygonInstance4" type="NavigationPolygonInstance" parent="GameManager/Navigation2D"]
+visible = false
+position = Vector2( -781.063, -954.013 )
+navpoly = SubResource( 3 )
+enabled = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="GameManager"]
 pause_mode = 2
@@ -172,7 +185,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/normal_font = ExtResource( 6 )
+custom_fonts/normal_font = ExtResource( 8 )
 bbcode_enabled = false
 bbcode_text = ""
 visible_characters = -1
