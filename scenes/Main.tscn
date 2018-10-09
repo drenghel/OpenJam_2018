@@ -9,7 +9,7 @@
 [ext_resource path="res://scenes/tram.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/fonts/my_font.tres" type="DynamicFont" id=8]
 
-[sub_resource type="NavigationPolygon" id=3]
+[sub_resource type="NavigationPolygon" id=1]
 
 vertices = PoolVector2Array( 1654.66, 1502.37, 1757.3, 1975.91, 700.871, 1969.67, 1331.58, 1488.38, 694.364, 905.763, 1335.08, 1358.91, 2892.16, 830.553, 1996.4, 1354.24, 2798.85, 1987.57, 2001.06, 1490.71, 1771.29, 1973.58, 1680.32, 1505.87 )
 polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 3, 2, 4, 5 ), PoolIntArray( 5, 4, 6, 7 ), PoolIntArray( 7, 6, 8, 9 ), PoolIntArray( 9, 8, 10, 11 ) ]
@@ -115,7 +115,7 @@ position = Vector2( 1875.61, 283.931 )
 [node name="NavigationPolygonInstance4" type="NavigationPolygonInstance" parent="GameManager/Navigation2D"]
 visible = false
 position = Vector2( -781.063, -954.013 )
-navpoly = SubResource( 3 )
+navpoly = SubResource( 1 )
 enabled = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="GameManager"]
